@@ -1,0 +1,14 @@
+.div {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  text-align: center;
+}
+
+.div input {
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  width: 25rem;
+  height: 2rem;
+  margin-top: 1.5rem;
+}

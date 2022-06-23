@@ -1,0 +1,23 @@
+.words {
+    margin: 1rem 0;
+    /* width: 90%; */
+   text-align: center;
+   /* height: 44rem; */
+   /* overflow-y: scroll; */
+  }
+  
+  .words ul {
+    list-style: none;
+    padding: 1rem;
+   
+  }
+  
+
+  .words li {
+    border: 1px solid #ccc;
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
