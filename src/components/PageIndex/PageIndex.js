@@ -12,13 +12,13 @@ const PageIndex = ({ onPageIncrement }) => {
 
   const incrementPageHandler = () => {
     dispatch(pageSliceActions.incrementPage());
-    dispatch(fetchVehiclesList(currentPage + 1, lastDoc, "next"));
+    dispatch(fetchVehiclesList(currentPage + 1, lastDoc, "next"."",""));
   };
 
   const decrementPageHandler = () => {
     dispatch(pageSliceActions.decrementPage());
 
-    dispatch(fetchVehiclesList(currentPage - 1, firstDoc, "prev"));
+    dispatch(fetchVehiclesList(currentPage - 1, firstDoc, "prev","",""));
   };
 
   return (
