@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
 import { Routes, Route, Navigate } from "react-router-dom";
 import MainHeader from "./components/Header/MainHeader";
 import Contact from "./pages/Contact";
@@ -7,15 +5,10 @@ import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import FormPage from "./pages/Form-page";
 import VehicleDetail from "./pages/VehicleDetail";
-import { fetchVehiclesList } from "./store/fetch-action";
 import EditPage from "./pages/EditPage";
 
 import Home from "./pages/Home";
 function App() {
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(fetchVehiclesList(1));
-  // }, [dispatch]);
   return (
     <>
       <MainHeader />

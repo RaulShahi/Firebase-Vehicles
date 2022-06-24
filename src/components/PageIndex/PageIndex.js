@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { pageSliceActions } from "../../store/page-slice";
 import { fetchVehiclesList } from "../../store/fetch-action";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-const PageIndex = ({}) => {
+const PageIndex = () => {
   const dispatch = useDispatch();
   const { currentPage } = useSelector((state) => state.page);
   const { lastDoc, firstDoc } = useSelector((state) => state.doc);

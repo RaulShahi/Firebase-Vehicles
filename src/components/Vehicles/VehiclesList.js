@@ -24,12 +24,7 @@ const VehiclesList = ({ name, type }) => {
     });
   }
   if (type !== "") {
-    vehiclesList = vehiclesList.filter((item) => {
-      if (item["type"] === type) {
-        return item;
-      }
-      console.log(item.category);
-    });
+    vehiclesList = vehiclesList.filter((item) => item["type"] === type);
   }
 
   const showIndex = !name && !type;

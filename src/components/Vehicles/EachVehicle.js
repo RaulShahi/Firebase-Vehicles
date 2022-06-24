@@ -56,12 +56,6 @@ const EachVehicle = ({ currentVehicle, ID }) => {
   );
 };
 
-const listStyle = {
-  border: "1px solid black",
-  margin: "1rem",
-  padding: "1rem",
-  borderRadius: "10px",
-};
 const btnStyle = {
   backgroundColor: "#044599",
   margin: "0.5rem",

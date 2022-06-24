@@ -1,8 +1,6 @@
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { Fragment, useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { editBtnActions } from "../store/store";
+
 import { getDoc, doc } from "firebase/firestore";
 import { db } from "../config";
 import Card from "../components/UI/Card/Card";

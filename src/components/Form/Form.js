@@ -5,12 +5,7 @@ import { formDataActions } from "../../store/formData-slice";
 import { validityActions } from "../../store/validity-slice";
 import { sizeSliceActions } from "../../store/size-slice";
 import { addVehicle, editVehicle } from "../../store/vehicle-slice";
-import {
-  ref,
-  uploadBytes,
-  getDownloadURL,
-  uploadBytesResumable,
-} from "firebase/storage";
+import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { v4 } from "uuid";
 import { storage } from "../../config";
 import { useNavigate } from "react-router-dom";
@@ -18,8 +13,6 @@ import { pageSliceActions } from "../../store/page-slice";
 import { editBtnActions, loadingAction } from "../../store/store";
 import Input from "../Input/Input";
 import Dropdown from "../Input/Dropdown";
-import ProgressBar from "../UI/ProgressBar";
-import Spinner from "../UI/Spinner";
 import { useEffect } from "react";
 
 const Form = () => {
@@ -36,7 +29,7 @@ const Form = () => {
   const [imageUpload, setImageUpload] = useState(null);
   const [imagePreview, setImagePreview] = useState(false);
   const { isLoading } = useSelector((state) => state.load);
-  const [progress, setProgress] = useState(0);
+  // const [progress, setProgress] = useState(0);
   console.log("Edit", edit);
 
   const formSubmitHandler = (event) => {
@@ -53,10 +46,10 @@ const Form = () => {
       const imageRef = ref(storage, imagePath);
       uploadBytesResumable(imageRef, imageUpload)
         .then((snapshot) => {
-          console.log(snapshot);
-          const status =
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          setProgress(status);
+          // console.log(snapshot);
+          // const status =
+          //   (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          // setProgress(status);
           getDownloadURL(snapshot.ref).then((url) => {
             if (!edit) {
               dispatch(addVehicle({ ...formData, image: url, imagePath }));
@@ -151,8 +144,6 @@ const Form = () => {
   };
 
   useEffect(() => {
-    console.log("form mount");
-
     return () => {
       if (edit) {
         dispatch(validityActions.clear());
@@ -160,7 +151,7 @@ const Form = () => {
         dispatch(editBtnActions.setEdit(false));
       }
     };
-  }, []);
+  }, [dispatch, edit]);
   const text = edit ? "Edit" : "Submit";
 
   const FormElement = (

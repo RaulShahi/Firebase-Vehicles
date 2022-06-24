@@ -6,7 +6,7 @@ import classes from "../components/Vehicles/VehiclesList.module.css";
 import VehiclesList from "../components/Vehicles/VehiclesList";
 import { useState } from "react";
 import { pageSliceActions } from "../store/page-slice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const Home = () => {
   const [searchedName, setSearchedName] = useState("");
@@ -43,4 +43,3 @@ const Home = () => {
 };
 
 export default Home;
-
