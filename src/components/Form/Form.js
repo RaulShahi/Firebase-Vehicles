@@ -14,6 +14,7 @@ import { editBtnActions, loadingAction } from "../../store/store";
 import Input from "../Input/Input";
 import Dropdown from "../Input/Dropdown";
 import { useEffect } from "react";
+import ProgressBar from "../UI/ProgressBar";
 
 const Form = () => {
   const { type, modelName, company, engine, mileage, image } = useSelector(
@@ -29,7 +30,7 @@ const Form = () => {
   const [imageUpload, setImageUpload] = useState(null);
   const [imagePreview, setImagePreview] = useState(false);
   const { isLoading } = useSelector((state) => state.load);
-  // const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(0);
   console.log("Edit", edit);
 
   const formSubmitHandler = (event) => {
@@ -46,10 +47,9 @@ const Form = () => {
       const imageRef = ref(storage, imagePath);
       uploadBytesResumable(imageRef, imageUpload)
         .then((snapshot) => {
-          // console.log(snapshot);
-          // const status =
-          //   (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          // setProgress(status);
+          const status =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          setProgress(status);
           getDownloadURL(snapshot.ref).then((url) => {
             if (!edit) {
               dispatch(addVehicle({ ...formData, image: url, imagePath }));
@@ -59,7 +59,7 @@ const Form = () => {
               dispatch(editVehicle({ ...formData, image: url, imagePath }));
             }
             dispatch(loadingAction.toggleLoad(false)); // set Loading action to false
-            navigate(`/home/vehicles/details/${location.state}`, {
+            navigate(`/`, {
               replace: true,
             }); // redirect to detail page
           });
@@ -243,7 +243,7 @@ const Form = () => {
     <Fragment>
       {isLoading ? (
         <div style={{ marginTop: "5rem" }}>
-          {/* <ProgressBar value={progress} /> */}
+          <ProgressBar value={progress} />
         </div>
       ) : (
         FormElement
