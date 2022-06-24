@@ -9,7 +9,6 @@ import PageIndex from "../PageIndex/PageIndex";
 const VehiclesList = ({ name, type }) => {
   const { currentVehicles } = useSelector((state) => state.vehicles);
   const { isLoading } = useSelector((state) => state.load);
-  // console.log("name", name);
 
   const dispatch = useDispatch();
   let vehiclesList = currentVehicles;
@@ -34,7 +33,6 @@ const VehiclesList = ({ name, type }) => {
   }
 
   const showIndex = !name && !type;
-  console.log("show index", showIndex);
 
   return (
     <Fragment>
@@ -43,7 +41,12 @@ const VehiclesList = ({ name, type }) => {
         <div>
           <ul style={listDiv}>
             {vehiclesList.map((item) => (
-              <VehicleName key={item.id} currentVehicle={item} />
+              <VehicleName
+                key={item.id}
+                currentVehicle={item}
+                name={name}
+                type={type}
+              />
             ))}
           </ul>
           {showIndex && <PageIndex />}

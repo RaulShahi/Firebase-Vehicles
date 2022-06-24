@@ -9,6 +9,7 @@ export const formDataSlice = createSlice({
     engine: "",
     mileage: "",
     image: "",
+    imagePath: "",
   },
   reducers: {
     userInput(state, action) {
@@ -33,9 +34,10 @@ export const formDataSlice = createSlice({
         mileage: action.payload.mileage,
         id: action.payload.id,
         image: action.payload.image,
+        imagePath: action.payload.imagePath,
       };
     },
-    submit(state) {
+    submit(state, action) {
       return {
         type: "",
         modelName: "",

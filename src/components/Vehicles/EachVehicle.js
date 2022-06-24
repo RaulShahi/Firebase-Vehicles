@@ -38,13 +38,13 @@ const EachVehicle = ({ currentVehicle, ID }) => {
           <button style={btnStyle}>Back</button>
         </Link>
 
-        <Link to={`/edit-vehicle/${ID}`} state={all.image}>
+        <Link to={`/edit-vehicle/${ID}`} state={ID}>
           <button style={btnStyle} onClick={editHandler}>
             Edit
           </button>
         </Link>
       </div>
-      <img src={all.image} alt={all.modelName} />
+      <img src={all.image} alt={all.modelName} className="imgStyle" />
       <div>
         <h2>{all.modelName}</h2>
         <h3>{all.company}</h3>

@@ -1,0 +1,9 @@
+.modal {
+  position: fixed;
+  top: 30vh;
+  margin: auto 20rem;
+  padding: 2rem;
+  width: 50%;
+  z-index: 100;
+  overflow: hidden;
+}

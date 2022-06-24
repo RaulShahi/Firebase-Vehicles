@@ -8,7 +8,6 @@ import {
   endBefore,
   limit,
   limitToLast,
-  where,
 } from "firebase/firestore";
 import { db } from "../config";
 
@@ -28,6 +27,7 @@ export const fetchVehiclesList = (page, lastVisible, action, name, type) => {
       let vehicles = [];
       let batch;
       if (name === "" && type === "") {
+        console.log("No name no type");
         if (page === 1) {
           batch = query(
             collection(db, "vehicles"),
@@ -51,22 +51,22 @@ export const fetchVehiclesList = (page, lastVisible, action, name, type) => {
               limitToLast(pgLimit)
             );
           }
-        }
-        if (action === "delete") {
-          batch = query(
-            collection(db, "vehicles"),
-            orderBy("modelName"),
-            startAt(lastVisible),
-            limit(pgLimit + 1)
-          );
+          if (action === "delete") {
+            console.log("Delete Called for no search and type");
+            batch = query(
+              collection(db, "vehicles"),
+              orderBy("modelName"),
+              startAt(lastVisible),
+              limit(pgLimit)
+            );
+          }
         }
       } else {
         batch = query(collection(db, "vehicles"), orderBy("modelName"));
       }
+
       const documentSnapshots = await getDocs(batch);
       dispatch(loadingAction.toggleLoad(false));
-      console.log("size", documentSnapshots.size);
-      console.log(documentSnapshots);
 
       const firstDoc = documentSnapshots.docs[0];
       const lastDoc = documentSnapshots.docs[documentSnapshots.docs.length - 1];
@@ -88,7 +88,6 @@ export const fetchVehiclesList = (page, lastVisible, action, name, type) => {
           id: item.id,
         };
       });
-      console.log("Transformed data", transformedData);
       return { transformedData, size };
     };
     try {

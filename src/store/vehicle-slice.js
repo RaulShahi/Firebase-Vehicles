@@ -14,6 +14,7 @@ export const addVehicle = createAsyncThunk(
 export const editVehicle = createAsyncThunk(
   "vehicles/editVehicle",
   async (payload) => {
+    console.log("Payload from vehicle slice", payload);
     const { type, modelName, engine, mileage, id, company, image, imagePath } =
       payload;
     await setDoc(doc(db, "vehicles", id), {
