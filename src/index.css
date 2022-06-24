@@ -13,45 +13,6 @@ body {
   background-color: rgb(216, 220, 248);
 }
 
-.app {
-  width: 90%;
-  max-width: 43rem;
-  padding: 1rem;
-  border-radius: 12px;
-  background-color: white;
-  margin: 3rem auto;
-}
-
-/* .form-control {
-  margin-bottom: 1rem;
-}
-
-.form-control input,
-.form-control label {
-  display: block;
-}
-
-.form-control label {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.form-control input,
-.form-control select {
-  font: inherit;
-  padding: 0.5rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  width: 20rem;
-  max-width: 100%;
-}
-
-.form-control input:focus {
-  outline: none;
-  border-color: #240370;
-  background-color: #e0d4fd;
-} */
-
 .control-group {
   /* display: flex; */
   margin: 2rem;
@@ -84,28 +45,6 @@ button:active {
   border-color: #33059e;
 }
 
-.form-actions {
-  text-align: left;
-}
-
-.form-actions button {
-  margin-left: 1rem;
-}
-
-.invalid input {
-  border: 1px solid #b40e0e;
-  background-color: #fddddd;
-}
-
-.invalid input:focus {
-  border-color: #ff8800;
-  background-color: #fbe8d2;
-}
-
-.error-text {
-  color: #b40e0e;
-}
-
 .formDiv {
   display: flex;
   align-items: center;
@@ -129,4 +68,19 @@ button:active {
   margin: 1rem;
   background-color: rgb(236, 236, 236);
   border-radius: 10px;
+}
+
+.btnDiv {
+  margin: 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.imgStyle {
+  width: 200px;
+  height: 200px;
+}
+
+.spanStyle {
+  margin: 0.5rem;
 }

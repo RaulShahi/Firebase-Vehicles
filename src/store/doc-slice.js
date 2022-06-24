@@ -6,7 +6,6 @@ export const docSlice = createSlice({
   reducers: {
     getLastDoc(state, action) {
       state.lastDoc = action.payload;
-      console.log(action.payload);
     },
     getFirstDoc(state, action) {
       state.firstDoc = action.payload;

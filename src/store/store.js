@@ -18,6 +18,7 @@ const loadSlice = createSlice({
     },
   },
 });
+
 export const loadingAction = loadSlice.actions;
 
 export const store = configureStore({
