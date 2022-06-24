@@ -252,7 +252,7 @@ const Form = () => {
     <Fragment>
       {isLoading ? (
         <div style={{ marginTop: "5rem" }}>
-          <ProgressBar value={progress} />
+          {/* <ProgressBar value={progress} /> */}
         </div>
       ) : (
         FormElement
