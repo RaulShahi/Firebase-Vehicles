@@ -84,3 +84,7 @@ button:active {
 .spanStyle {
   margin: 0.5rem;
 }
+.ant-btn {
+  color: #fff;
+  border-radius: 5px;
+}

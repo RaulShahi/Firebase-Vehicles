@@ -1,7 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { pageSliceActions } from "../../store/page-slice";
 import { fetchVehiclesList } from "../../store/fetch-action";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Button } from "antd";
+import { ArrowRightOutlined, ArrowLeftOutlined } from "@ant-design/icons";
 const PageIndex = () => {
   const dispatch = useDispatch();
   const { currentPage } = useSelector((state) => state.page);
@@ -25,19 +27,28 @@ const PageIndex = () => {
       {currentPage === 1 ? (
         ""
       ) : (
-        <button className="spanStyle" onClick={decrementPageHandler}>
-          <FontAwesomeIcon icon="fa-solid fa-arrow-left" />
-          <span> </span>
-          <span className="spanStyle">Previous</span>
-        </button>
+        <Button
+          type="primary"
+          className="spanStyle"
+          size="large"
+          onClick={decrementPageHandler}
+        >
+          <ArrowLeftOutlined />
+          Previous
+        </Button>
       )}
       {currentPage === numberOfPages ? (
         ""
       ) : (
-        <button className="spanStyle" onClick={incrementPageHandler}>
-          <span className="spanStyle">Next</span>
-          <FontAwesomeIcon icon="fa-solid fa-arrow-right " />
-        </button>
+        <Button
+          type="primary"
+          className="spanStyle"
+          size="large"
+          onClick={incrementPageHandler}
+        >
+          Next
+          <ArrowRightOutlined />
+        </Button>
       )}
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
+import { Button } from "antd";
 import Modal from "../UI/Modal/Modal";
 
 const VehicleName = (props) => {
@@ -40,9 +41,13 @@ const VehicleName = (props) => {
 
         <div className="btnDiv">
           <Link to={`vehicles/details/${iD}`}>
-            <button>Details</button>
+            <Button type="primary" size="large">
+              Details
+            </Button>
           </Link>
-          <button onClick={deleteHandler}>Delete</button>
+          <Button onClick={deleteHandler} type="danger" size="large">
+            Delete
+          </Button>
         </div>
       </div>
     </Fragment>
