@@ -22,10 +22,10 @@ const Dropdown = (props) => {
 };
 
 const selectStyle = {
-  width: "10rem",
+  width: "8rem",
   height: "2rem",
   border: "2px solid #ccc",
-  borderRadius: "10px",
+  borderRadius: "6px",
   color: "#464646",
   textAlign: "center",
   fontWeight: "bold",

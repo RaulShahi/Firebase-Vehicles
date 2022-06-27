@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { editBtnActions } from "../../store/store";
 import { formDataActions } from "../../store/formData-slice";
 import { validityActions } from "../../store/validity-slice";
+import { Button } from "antd";
 
 const EachVehicle = ({ currentVehicle, ID }) => {
   const keys = Object.keys(currentVehicle);
@@ -35,13 +36,20 @@ const EachVehicle = ({ currentVehicle, ID }) => {
     <Fragment>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <Link to="/home" style={{ alignItems: "center" }}>
-          <button style={btnStyle}>Back</button>
+          <Button type="primary" style={btnStyle} size="large">
+            Back
+          </Button>
         </Link>
 
         <Link to={`/edit-vehicle/${ID}`} state={ID}>
-          <button style={btnStyle} onClick={editHandler}>
+          <Button
+            type="primary"
+            style={btnStyle}
+            size="large"
+            onClick={editHandler}
+          >
             Edit
-          </button>
+          </Button>
         </Link>
       </div>
       <img src={all.image} alt={all.modelName} className="imgStyle" />
@@ -57,7 +65,7 @@ const EachVehicle = ({ currentVehicle, ID }) => {
 };
 
 const btnStyle = {
-  backgroundColor: "#044599",
+  // backgroundColor: "#044599",
   margin: "0.5rem",
 };
 

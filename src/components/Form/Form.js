@@ -11,7 +11,7 @@ import { storage } from "../../config";
 import { useNavigate } from "react-router-dom";
 import { pageSliceActions } from "../../store/page-slice";
 import { editBtnActions, loadingAction } from "../../store/store";
-import Input from "../Input/Input";
+import InputElement from "../Input/Input";
 import Dropdown from "../Input/Dropdown";
 import { useEffect } from "react";
 import ProgressBar from "../UI/ProgressBar";
@@ -168,7 +168,7 @@ const Form = () => {
           {formIsTouched && !type && (
             <p style={paraStyle}>Please select the type of vehicle.</p>
           )}
-          <Input
+          <InputElement
             id="name"
             label="Model name"
             type="text"
@@ -179,7 +179,7 @@ const Form = () => {
           {formIsTouched && !modelName && (
             <p style={paraStyle}>Model Name Cannot Be Empty.</p>
           )}
-          <Input
+          <InputElement
             id="company"
             label="Company"
             type="text"
@@ -192,7 +192,7 @@ const Form = () => {
               Please enter the registered company name for the vehicle.
             </p>
           )}
-          <Input
+          <InputElement
             id="engine"
             label="Engine Type"
             type="text"
@@ -203,7 +203,7 @@ const Form = () => {
           {formIsTouched && !engine && (
             <p style={paraStyle}>Please enter a valid engine description.</p>
           )}
-          <Input
+          <InputElement
             id="mileage"
             label="Mileage(KMPL)"
             type="text"
@@ -222,7 +222,7 @@ const Form = () => {
           {imagePreview && (
             <img src={imagePreview} alt="bob" className="imgStyle" />
           )}
-          <Input
+          <InputElement
             id="image"
             label="Upload a Photo"
             type="file"

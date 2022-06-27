@@ -1,10 +1,11 @@
 import React from "react";
 import classes from "./Input.module.css";
-const Input = (props) => {
+import { Input } from "antd";
+const InputElement = (props) => {
   return (
     <div className={`${classes.control}`}>
       <label htmlFor={props.id}>{props.label}</label>
-      <input
+      <Input
         type={props.type}
         id={props.id}
         value={props.value}
@@ -17,4 +18,4 @@ const Input = (props) => {
   );
 };
 
-export default Input;
+export default InputElement;
